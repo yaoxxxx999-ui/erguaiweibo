@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="二怪微博">
+    <title>二怪微博</title>
+    <link rel="manifest" href="./manifest.webmanifest">
+    <link rel="apple-touch-icon" href="./icon.svg">
+    <link rel="stylesheet" href="./styles.css?v=5">
+  </head>
+  <body>
+    <a class="skip-link" href="#timeline-view">Skip to content</a>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">二怪的微博</p>
+          <h1 id="view-title">Timeline</h1>
+        </div>
+        <p class="count" id="post-count">读取中</p>
+      </header>
+
+      <section class="toolbar" aria-label="筛选">
+        <label class="search-wrap">
+          <span>关键词</span>
+          <input id="search-input" type="search" placeholder="搜索微博内容">
+        </label>
+        <div class="date-filter">
+          <div class="precision-control" aria-label="时间搜索精度">
+            <button class="precision-option is-active" type="button" data-precision="year">年</button>
+            <button class="precision-option" type="button" data-precision="month">月</button>
+            <button class="precision-option" type="button" data-precision="day">日</button>
+          </div>
+          <label class="date-wrap">
+            <span>日期</span>
+            <input id="date-input" type="date" aria-label="选择时间">
+          </label>
+          <button class="clear-date" id="clear-date" type="button" aria-label="清除时间筛选">×</button>
+        </div>
+      </section>
+
+      <section class="view is-active" id="timeline-view" aria-labelledby="timeline-tab">
+        <div class="timeline" id="timeline"></div>
+        <button class="load-more" id="load-more" type="button">继续加载</button>
+      </section>
+
+      <section class="view" id="surprise-view" aria-labelledby="surprise-tab">
+        <article class="surprise-card" id="surprise-card">
+          <p class="empty">正在准备惊喜</p>
+        </article>
+        <button class="primary-action" id="surprise-button" type="button">Surprise me</button>
+      </section>
+    </main>
+
+    <nav class="tabbar" aria-label="主导航">
+      <button class="tab is-active" id="timeline-tab" type="button" data-view="timeline">
+        <span class="tab-icon">☰</span>
+        <span>Timeline</span>
+      </button>
+      <button class="tab" id="surprise-tab" type="button" data-view="surprise">
+        <span class="tab-icon">✦</span>
+        <span>Surprise</span>
+      </button>
+    </nav>
+
+    <script src="./app.js?v=7" defer></script>
+  </body>
+</html>
